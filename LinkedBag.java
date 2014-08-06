@@ -36,35 +36,60 @@ public class LinkedBag<T> implements BagInterface<T> {
 	}
 
 	public T remove() {
-		//TODO
-		return null;
+		T r_Entry = null;
+		if( !isEmpty() ) {
+			r_Entry = this.head.data;
+			this.head = this.head.next;
+			numOfEntries--;
+		}
+		return r_Entry;
 	}
 
 	public T remove (T anEntry) {
-		//TODO
-		return null;
+		boolean isFound = false;
+		T r_Entry = null;
+		Node currNode = this.head;
+		Node prevNode = null;
+		while( (!isFound) && (currNode != null) ) {
+			if(anEntry.equals(currNode.data)) {
+				isFound = true;
+				r_Entry = currNode.data;
+				prevNode.next = currNode.next;
+				numOfEntries --;
+			}
+			prevNode = currNode;
+			currNode = currNode.next;
+		}
+		return r_Entry;
 	}
+
 	public void clear() {
-		//TODO
+		this.numOfEntries = 0;
+		head = null;
 	}
 
 	public int getFrequencyOf(T anEntry) {
 		int freq = 0;
-		int index = 0;
 		Node currNode = head;
-		while((index < this.numOfEntries) && (currNode != null)) {
-			if(anEntry.equals(currNode)) {
+		while( (currNode != null) ) {
+			if(anEntry.equals(currNode.data)) {
 				freq ++;
 			}
-			index ++;
 			currNode = currNode.next;
 		}
 		return freq;
 	}
 
 	public boolean contains(T anEntry) {
-		return false;
-		//TODO
+		Node currentNode = head;
+		boolean isFound = false;
+		while( (currentNode != null) && (!isFound)) {
+			if(anEntry.equals(currentNode.data)){
+				isFound = true;
+			}
+			currentNode = currentNode.next;
+		}
+		return isFound;
 	}
 
 	public T[] toArray() {

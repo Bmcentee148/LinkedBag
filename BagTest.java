@@ -18,23 +18,24 @@ public class BagTest {
 		obj_bag.add("Kyle"); 
 		System.out.println(obj_bag.getCurrentSize()); // r_ 7
 		displayState(obj_bag);
-		// obj_bag.remove();
-		// obj_bag.remove("Brian");
-		// //should now contain 4 names
-		// displayState(obj_bag);
+		obj_bag.remove();
+		obj_bag.remove("Brian");
+		//should now contain 4 names
+		
 
-		// obj_bag.add("Brian");
-		// obj_bag.add("Brian");
-		// System.out.println(obj_bag.getFrequencyOf("Brian")); //2
-		// System.out.println(obj_bag.getFrequencyOf("Casey")); //1
-		// System.out.println(obj_bag.getFrequencyOf("Jamie")); //0
+		obj_bag.add("Brian");
+		obj_bag.add("Brian");
+		displayState(obj_bag);
+		System.out.println(obj_bag.getFrequencyOf("Brian")); //2
+		System.out.println(obj_bag.getFrequencyOf("Casey")); //1
+		System.out.println(obj_bag.getFrequencyOf("Jamie")); //0
 
-		// System.out.println(obj_bag.contains("Casey"));
-		// System.out.println(obj_bag.contains("Jamie"));
+		System.out.println(obj_bag.contains("Casey"));
+		System.out.println(obj_bag.contains("Jamie"));
 
-		// obj_bag.clear();
-		// System.out.println(obj_bag.isEmpty());
-		// System.out.println(obj_bag.getCurrentSize());
+		obj_bag.clear();
+		System.out.println(obj_bag.isEmpty());
+		System.out.println(obj_bag.getCurrentSize());
 
 
 	}
